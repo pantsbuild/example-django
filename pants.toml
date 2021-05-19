@@ -1,0 +1,43 @@
+# Copyright 2021 Pants project contributors.
+# Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+[GLOBAL]
+pants_version = "2.5.0rc2"
+pantsd = true  # Enable the Pants daemon for better performance.
+
+backend_packages.add = [
+  'pants.backend.python',
+  'pants.backend.python.lint.docformatter',
+  'pants.backend.python.lint.black',
+  'pants.backend.python.lint.flake8',
+  'pants.backend.python.lint.isort',
+  'pants.backend.python.typecheck.mypy',
+]
+
+[source]
+# The Python source root is the repo root. See https://www.pantsbuild.org/docs/source-roots.
+root_patterns = ["/"]
+
+[sourcefile-validation]
+config = "@build-support/validate.yaml"
+
+[python-setup]
+# The default interpreter compatibility for code in this repo. Individual targets can override
+#  this with the `compatibility` field. See
+#  https://www.pantsbuild.org/docs/python-interpreter-compatibility.
+interpreter_constraints = [">=3.7"]
+# Use a lockfile. See https://www.pantsbuild.org/docs/python-third-party-dependencies.
+requirement_constraints = "constraints.txt"
+# We search for interpreters on both on the $PATH and in the `$(pyenv root)/versions` folder.
+#  If you're using macOS, you may want to leave off the <PATH> entry to avoid using the
+#  problematic system Pythons. See
+#  https://www.pantsbuild.org/docs/python-interpreter-compatibility#changing-the-interpreter-search-path.
+interpreter_search_paths = ["<PATH>", "<PYENV>"]
+
+[python-infer]
+string_imports = true
+
+[pytest]
+pytest_plugins.add = [
+  "pytest-django>=3.9.0,<4",
+]

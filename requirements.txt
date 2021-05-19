@@ -1,0 +1,12 @@
+# Copyright 2021 Pants project contributors.
+# Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+ansicolors>=1.0.2
+django==3.2.3
+django-stubs>=1.8.0
+gunicorn>=20.1.0
+setuptools>=42.0.0
+translate>=3.2.1
+protobuf>=3.11.3
+pytest>=6.0.1
+requests>=2.25.1

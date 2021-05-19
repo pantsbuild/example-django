@@ -5,6 +5,8 @@ import os
 import sys
 from pathlib import PurePath
 
+from helloworld.util.discovery import get_dev_port
+
 
 class Service:
     def __init__(self, name_or_file: str):
@@ -31,9 +33,7 @@ class Service:
         args = sys.argv
         if len(sys.argv) == 2 and sys.argv[1] == "runserver":
             # If no port was provided, use the dev port for this service.
-            from django.conf import settings
-
-            dev_port = settings.DEV_PORTS[self._name]
+            dev_port = get_dev_port(self._name)
             args += [f"{dev_port}"]
         from django.core.management import execute_from_command_line
 

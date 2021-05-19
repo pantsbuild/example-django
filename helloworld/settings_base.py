@@ -1,8 +1,10 @@
 # Copyright 2021 Pants project contributors.
 # Licensed under the Apache License, Version 2.0 (see LICENSE).
 
+from __future__ import annotations
+
 import os
-from typing import Any, Dict, List
+from typing import Any
 
 from helloworld.util.per_app_db_router import PerAppDBRouter
 
@@ -15,7 +17,7 @@ SECRET_KEY = "DEV_SECURITY_KEY"
 
 DEBUG = True
 
-ALLOWED_HOSTS: List[str] = []
+ALLOWED_HOSTS: list[str] = []
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
@@ -23,9 +25,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
-    # "django.contrib.sessions.middleware.SessionMiddleware",
-    # "django.contrib.auth.middleware.AuthenticationMiddleware",
-    # "django.contrib.messages.middleware.MessageMiddleware",
 ]
 
 TEMPLATES = [
@@ -44,7 +43,7 @@ TEMPLATES = [
     },
 ]
 
-DATABASES: Dict[str, Any] = {
+DATABASES: dict[str, Any] = {
     # Django chokes if 'default' isn't present at all. But it can be set to an empty dict, which
     # will be treated as a dummy db.
     "default": {}
@@ -85,10 +84,3 @@ USE_L10N = True
 USE_TZ = True
 
 WSGI_APPLICATION = "helloworld.wsgi.application"
-
-DEV_PORTS = {
-    "helloworld.service.frontend": 8000,
-    "helloworld.service.admin": 8001,
-    "helloworld.service.user": 8010,
-    "helloworld.service.welcome": 8020,
-}

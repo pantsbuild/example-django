@@ -2,8 +2,7 @@
 # Licensed under the Apache License, Version 2.0 (see LICENSE).
 
 [GLOBAL]
-pants_version = "2.5.0rc2"
-pantsd = true  # Enable the Pants daemon for better performance.
+pants_version = "2.5.0"
 
 backend_packages.add = [
   'pants.backend.python',
@@ -35,6 +34,8 @@ requirement_constraints = "constraints.txt"
 interpreter_search_paths = ["<PATH>", "<PYENV>"]
 
 [python-infer]
+# Infer dependencies from strings that look like module/class names, such as are often
+# found in settings.py, where dependencies are enumerated as strings and not directly imported.
 string_imports = true
 
 [pytest]

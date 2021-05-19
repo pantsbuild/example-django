@@ -4,7 +4,8 @@
 # See https://www.pantsbuild.org/docs/using-pants-in-ci.
 
 [GLOBAL]
-pantsd = false
+dynamic_ui = false
+colors = true
 
 # Limit the maximum number of concurrent processes. Change this
 # to a number that makes sense for your CI setup, based on

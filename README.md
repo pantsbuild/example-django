@@ -2,7 +2,7 @@
 
 An example repository to demonstrate Django support in Pants.
 
-The demo consists of a set of microservices that implement an elaborate "Hello, World" site.
+The demo consists of a set of services that implement an elaborate "Hello, World" site.
 This repo shows how Pants can support multiple Django services in a single repo, with
 minimal copypasta.
 
@@ -13,6 +13,37 @@ deployable services composed of multiple apps and typically attached to one or m
 See [pantsbuild.org](https://www.pantsbuild.org/) for much more detailed documentation about Pants.
 
 See [here](https://github.com/pantsbuild/example-python) for an example of basic Python support in Pants.
+
+## Architecture
+
+We utilize a flexible "database-first" architecture: Since migrating production databases
+is significantly harder and riskier than modifying stateless services, our architecture treats
+the databases as standalone logical entities not subservient to any app or service.
+"Code is for now, data is forever."
+
+- The models in each app map to one of the logical databases, via a custom
+  [database router](helloworld/util/per_app_db_router.py).
+- The settings for each server map the logical databases required by its apps to physical databases.
+
+If it makes sense to do so, different services can reuse the same app in different databases, by
+pointing the same logical database at different physical databases in each service.
+
+The only constraint is that if a model in one app reference a model in another app via foreign key
+then both apps must be mapped to the same logical db. You can see an example of this in
+[helloworld/translate/models.py](helloworld/translate/models.py).
+
+This architecture allows services to evolve in a flexible way as more apps and more functionality
+are developed.
+
+## Databases
+
+In order to demonstrate multi-db configurations, there are two logical databases:
+
+- `users`: User-related data.
+- `greetings`: Greeting-related data.
+
+Currently the services map these logical databases to sqlite dbs.
+We plan to add examples of using PostgreSQL.
 
 ## Services
 
@@ -29,7 +60,7 @@ and adds anything specific to that service.
 
 Note that we make no argument for or against microservices vs. monolithic services as a deployment
 architecture. We *do* make an argument in favor of a monorepo over multiple repos as a codebase architecture,
-and this repo demonstrates the utility of a monorepo even if (especially if!) you deploy microservices.
+and this repo demonstrates the utility of a monorepo, especially if you deploy multiple services.
 
 ## Apps
 
@@ -39,17 +70,6 @@ The services are composed of four Django apps:
 - `helloworld.person`: Functionality related to identifying the person to greet.
 - `helloworld.translate`: Functionality related to translating greetings into various languages.
 - `helloworld.ui`: Functionality related to rendering greetings to the end user.
-
-## Databases
-
-In order to demonstrate multi-db configurations, there are two databases:
-
-- `users`: User-related data.
-- `greetings`: Greeting-related data.
-
-Each app is associated with exactly one database.
-
-Currently these are sqlite. We plan to add examples of using PostgreSQL.
 
 ## Useful Pants commands
 
@@ -86,7 +106,7 @@ To run management commands for a service, use that service's `manage.py`, e.g.,
 ```
 
  Note that for `runserver`, each dev server will run on its own port, see DEV_PORTS in
-[`settings_base.py`](helloworld/settings_base.py).
+[`helloworld/util/discovery.py`](helloworld/util/discovery.py).
 
 To run migrations, it's best to use the admin service's manage.py, as it has access to
 all apps:
@@ -94,3 +114,11 @@ all apps:
 ```
 ./helloworld/service/admin/manage.py migrate --database=users --database=greetings
 ```
+
+The `manage.py` scripts run themselves via the root-level [`python`](python) script, which
+will ensure the existence of a virtualenv containing the repo's requirements, and then execute
+that virtualenv's Python interpreter.
+
+This is currently preferable to using `./pants run` to execute Django management commands, because
+Pants runs the binary in a sandbox that will prevent `runserver`, for example, from reloading on
+file changes.

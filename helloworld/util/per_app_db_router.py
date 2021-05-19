@@ -1,7 +1,7 @@
 # Copyright 2021 Pants project contributors.
 # Licensed under the Apache License, Version 2.0 (see LICENSE).
 
-from typing import Dict, Optional
+from __future__ import annotations
 
 
 class PerAppDBRouter:
@@ -11,20 +11,20 @@ class PerAppDBRouter:
     databases.
     """
 
-    def __init__(self, app_to_db: Dict[str, str]) -> None:
-        self._app_to_db: Dict[str, str] = dict(app_to_db)
+    def __init__(self, app_to_db: dict[str, str]) -> None:
+        self._app_to_db: dict[str, str] = dict(app_to_db)
 
-    def db_for_read(self, model, **hints) -> Optional[str]:
+    def db_for_read(self, model, **hints) -> str | None:
         return self._app_to_db.get(model._meta.app_label)
 
-    def db_for_write(self, model, **hints) -> Optional[str]:
+    def db_for_write(self, model, **hints) -> str | None:
         return self._app_to_db.get(model._meta.app_label)
 
-    def allow_relation(self, obj1, obj2, **hints) -> Optional[bool]:
+    def allow_relation(self, obj1, obj2, **hints) -> bool | None:
         # Only allow intra-db relations.
         return None
 
     def allow_migrate(
         self, db: str, app_label: str, model_name=None, **hints
-    ) -> Optional[bool]:
+    ) -> bool | None:
         return self._app_to_db.get(app_label) == db

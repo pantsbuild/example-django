@@ -1,8 +1,9 @@
 # Copyright 2021 Pants project contributors.
 # Licensed under the Apache License, Version 2.0 (see LICENSE).
 
+from __future__ import annotations
+
 from datetime import time
-from typing import Optional
 
 from django.db import migrations
 
@@ -11,7 +12,7 @@ def create_greetings(apps, schema_editor):
     Greeting = apps.get_model("greet", "Greeting")
 
     def create(
-        slug: str, salutation: str, start_time: Optional[str], end_time: Optional[str]
+        slug: str, salutation: str, start_time: str | None, end_time: str | None
     ) -> None:
         Greeting(
             slug=slug,

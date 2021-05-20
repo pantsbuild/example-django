@@ -3,16 +3,16 @@
 
 python_library(
     name="lib",
-    dependencies = [
+    dependencies=[
         "helloworld/greet",
         "helloworld/translate",
-    ]
+    ],
 )
 
 pex_binary(
-    name = 'gunicorn',
-    entry_point = 'gunicorn.py',
-    dependencies = [
-        ':lib',
+    name="gunicorn",
+    entry_point="gunicorn.py",
+    dependencies=[
+        ":lib",
     ],
 )

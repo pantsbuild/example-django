@@ -2,14 +2,14 @@
 # Licensed under the Apache License, Version 2.0 (see LICENSE).
 
 python_library(
-    dependencies = [
+    dependencies=[
         "helloworld/translate/migrations",
     ]
 )
 
 python_tests(
     name="tests",
-    dependencies = [
+    dependencies=[
         "helloworld",  # For settings.py.
-    ]
+    ],
 )

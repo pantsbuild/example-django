@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Copyright 2021 Pants project contributors.
+# Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+set -euo pipefail
+
+cd "$(git rev-parse --show-toplevel)"
+
+VENV_DIR=$(./ensure_venv.sh | tail -n1)
+PYTHON="${VENV_DIR}/bin/python"
+PYTHONPATH=. "${PYTHON}" $@

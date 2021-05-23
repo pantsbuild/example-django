@@ -71,6 +71,15 @@ The services are composed of four Django apps:
 - `helloworld.translate`: Functionality related to translating greetings into various languages.
 - `helloworld.ui`: Functionality related to rendering greetings to the end user.
 
+## To view the frontend:
+
+In three terminals run:
+- `./helloworld/service/frontend/manage.py runserver`
+- `./helloworld/service/user/manage.py runserver`
+- `./helloworld/service/welcome/manage.py runserver`
+
+And visit this URL in a browser: [http://127.0.0.1:8000/?person=sherlock&lang=es]() .
+
 ## Useful Pants commands
 
 To run all tests:

@@ -22,3 +22,6 @@ class Greeting(models.Model):
         if greetings:
             return greetings[0]
         return None
+
+    def __str__(self):
+        return self.slug

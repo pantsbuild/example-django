@@ -1,3 +1,14 @@
-<b>
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{% static 'helloworld/ui/helloworld.css' %}">
+</head>
+<body>
+
+<div class="greeting">
   {{ greeting }}, {{ name }}.
-</b>
+</div>
+
+</body>
+</html>

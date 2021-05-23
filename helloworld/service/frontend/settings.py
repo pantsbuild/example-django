@@ -8,5 +8,9 @@ ROOT_URLCONF = "helloworld.service.frontend.urls"
 INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.auth",
+    "django.contrib.staticfiles",
     "helloworld.ui",
 ]
+
+STATIC_URL = "/static/"
+STATIC_ROOT = "/tmp/static_root"

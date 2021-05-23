@@ -4,6 +4,9 @@
 import pytest
 
 from helloworld.greet.models import Greeting
+from helloworld.translate.models import (  # noqa: F401 (so fk related name works).
+    Translation,
+)
 
 
 @pytest.mark.django_db

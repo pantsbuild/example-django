@@ -18,7 +18,10 @@ def configure_settings(apps: list[str]) -> None:
         DATABASES={
             "default": {
                 "ENGINE": "django.db.backends.sqlite3",
-                "NAME": os.path.join(mkdtemp(), "test.sqlite3"),
+                "NAME": os.path.join(
+                    mkdtemp(),
+                    f"test{os.environ.get('PANTS_EXECUTION_SLOT', '')}.sqlite3",
+                ),
             }
         },
     )

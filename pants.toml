@@ -42,3 +42,5 @@ string_imports = true
 pytest_plugins.add = [
   "pytest-django>=3.9.0,<4",
 ]
+
+execution_slot_var = "PANTS_EXECUTION_SLOT"

@@ -32,6 +32,12 @@ class Service:
         os.environ.setdefault("DJANGO_SETTINGS_MODULE", f"{self._name}.settings")
         args = sys.argv
         if len(sys.argv) == 2 and sys.argv[1] == "runserver":
+            # We rely on Pants's reloading, so turn off Django's (which doesn't interact
+            # well with Pex: Pex's re-exec logic causes Django's re-exec to misdetect its
+            # entry point, see https://code.djangoproject.com/ticket/32314).
+            # TODO: Some way to detect that we're in a `./pants run`, and only set --noreload
+            #  in that case, so that users can run manage.py directly if they want to.
+            args += ["--noreload"]
             # If no port was provided, use the dev port for this service.
             dev_port = get_dev_port(self._name)
             args += [f"{dev_port}"]

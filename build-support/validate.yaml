@@ -12,8 +12,7 @@ path_patterns:
 content_patterns:
     - name: python_header
       pattern: |+
-        ^(?:#\!\/usr\/bin\/env ./python
-        )?# Copyright 20\d\d Pants project contributors.
+        ^# Copyright 20\d\d Pants project contributors.
         # Licensed under the Apache License, Version 2.0 \(see LICENSE\)\.
 
 required_matches:

@@ -2,7 +2,7 @@
 # Licensed under the Apache License, Version 2.0 (see LICENSE).
 
 [GLOBAL]
-pants_version = "2.6.0"
+pants_version = "2.8.0.dev4"
 
 backend_packages.add = [
   'pants.backend.python',
@@ -43,7 +43,7 @@ interpreter_search_paths = ["<PATH>", "<PYENV>"]
 string_imports = true
 
 [pytest]
-pytest_plugins.add = [
+extra_requirements.add = [
   "pytest-django>=3.9.0,<4",
 ]
 

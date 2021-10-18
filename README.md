@@ -111,23 +111,20 @@ To build deployable gunicorn .pex files for all services:
 To run management commands for a service, use that service's `manage.py`, e.g.,
 
 ```
-./helloworld/service/admin/manage.py runserver
+./pants run helloworld/service/admin/manage.py -- runserver
 ```
 
  Note that for `runserver`, each dev server will run on its own port, see DEV_PORTS in
 [`helloworld/util/discovery.py`](helloworld/util/discovery.py).
 
+Also, with `runserver` we turn off Django's autoreloader, since we rely on Pants's own
+file-watching instead, by setting `restartable=True` on the `pex_binary` targets for `manage.py`.
+Pants will correctly restart servers in situations where Django cannot, such as changes to 
+BUILD files, to `.proto` files, or to 3rdparty dependencies.
+
 To run migrations, it's best to use the admin service's manage.py, as it has access to
 all apps:
 
 ```
-./helloworld/service/admin/manage.py migrate --database=users --database=greetings
+./pants helloworld/service/admin/manage.py -- migrate --database=users --database=greetings
 ```
-
-The `manage.py` scripts run themselves via the root-level [`python`](python) script, which
-will ensure the existence of a virtualenv containing the repo's requirements, and then execute
-that virtualenv's Python interpreter.
-
-This is currently preferable to using `./pants run` to execute Django management commands, because
-Pants runs the binary in a sandbox that will prevent `runserver`, for example, from reloading on
-file changes.

@@ -74,9 +74,9 @@ The services are composed of four Django apps:
 ## To view the frontend:
 
 In three terminals run:
-- `./helloworld/service/frontend/manage.py runserver`
-- `./helloworld/service/user/manage.py runserver`
-- `./helloworld/service/welcome/manage.py runserver`
+- `./pants run helloworld/service/frontend/manage.py -- runserver`
+- `./pants run helloworld/service/user/manage.py -- runserver`
+- `./pants run helloworld/service/welcome/manage.py -- runserver`
 
 And visit this URL in a browser: [http://127.0.0.1:8000/?person=sherlock&lang=es]() .
 

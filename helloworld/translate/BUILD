@@ -13,3 +13,7 @@ python_tests(
         "helloworld",  # For settings.py.
     ],
 )
+
+python_test_utils(
+    name="test_utils",
+)

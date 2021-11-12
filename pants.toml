@@ -24,7 +24,7 @@ root_patterns = ["/"]
 [sourcefile-validation]
 config = "@build-support/validate.yaml"
 
-[python-setup]
+[python]
 # The default interpreter compatibility for code in this repo. Individual targets can override
 #  this with the `compatibility` field. See
 #  https://www.pantsbuild.org/docs/python-interpreter-compatibility.

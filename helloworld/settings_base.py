@@ -10,9 +10,6 @@ from helloworld.util.per_app_db_router import PerAppDBRouter
 
 HELLOWORLD_MODE = os.environ.get("HELLOWORLD_MODE", "DEV")
 
-# Construct paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 SECRET_KEY = "DEV_SECURITY_KEY"
 
 DEBUG = True
@@ -55,7 +52,7 @@ def set_up_database(db_name: str):
     # TODO: Consult HELLOWORLD_MODE to distinguish dev/staging/prod dbs.
     DATABASES[db_name] = {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, f"{db_name}.sqlite3"),
+        "NAME": f"{db_name}.sqlite3",
     }
 
 

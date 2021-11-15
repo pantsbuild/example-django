@@ -21,6 +21,7 @@ __pycache__/
 
 # Local databases.
 *.sqlite3
+*.sqlite3-journal
 
 # MacOS attribute files
 .DS_Store

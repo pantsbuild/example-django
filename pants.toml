@@ -43,6 +43,8 @@ interpreter_search_paths = ["<PATH>", "<PYENV>"]
 string_imports = true
 
 [pytest]
+lockfile = "lockfiles/pytest.txt"
+version = "pytest>=6.2.4,<6.3"
 extra_requirements.add = [
   "pytest-django>=3.9.0,<4",
 ]

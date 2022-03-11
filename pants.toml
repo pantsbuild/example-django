@@ -21,9 +21,6 @@ repo_id = "37798A99-096B-4B79-8D0F-30D4D1A1ECD1"
 # The Python source root is the repo root. See https://www.pantsbuild.org/docs/source-roots.
 root_patterns = ["/"]
 
-[sourcefile-validation]
-config = "@build-support/validate.yaml"
-
 [python]
 # The default interpreter compatibility for code in this repo. Individual targets can override
 #  this with the `compatibility` field. See

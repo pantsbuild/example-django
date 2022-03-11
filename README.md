@@ -91,7 +91,7 @@ To run all tests:
 To run formatters and linters:
 
 ```
-./pants fmt lint validate ::
+./pants fmt lint ::
 ```
 
 To run typechecking:

@@ -126,5 +126,6 @@ To run migrations, it's best to use the admin service's manage.py, as it has acc
 all apps:
 
 ```
-./pants run helloworld/service/admin/manage.py -- migrate --database=users --database=greetings
+./pants run helloworld/service/admin/manage.py -- migrate --database=users
+./pants run helloworld/service/admin/manage.py -- migrate --database=greetings
 ```

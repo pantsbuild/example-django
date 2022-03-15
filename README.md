@@ -97,7 +97,7 @@ To run formatters and linters:
 To run typechecking:
 
 ```
-./pants typecheck ::
+./pants check ::
 ```
 
 To build deployable gunicorn .pex files for all services:

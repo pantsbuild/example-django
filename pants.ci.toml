@@ -12,7 +12,7 @@ colors = true
 # the number of cores/threads.
 process_execution_local_parallelism = 2
 
-[python-setup]
+[python]
 # Limit the maximum number of concurrent jobs used to resolve third
 # party dependencies. The total level of parallelism will be
 # `process_execution_local_parallelism x resolver_jobs`.

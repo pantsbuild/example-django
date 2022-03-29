@@ -47,7 +47,7 @@ We plan to add examples of using PostgreSQL.
 
 ## Services
 
- There are four distinct services, defined under [`helloworld/services`](helloworld/services):
+ There are four distinct services, defined under [`helloworld/service`](helloworld/service):
 
 - `helloworld.services.admin`: Runs the Django admin UI.
 - `helloworld.services.frontend`: Serves end user requests.

@@ -11,7 +11,7 @@
 //   "generated_with_requirements": [
 //     "ansicolors>=1.0.2",
 //     "django-stubs>=1.10.0",
-//     "django==3.2.3",
+//     "django<4,>=3.2.13",
 //     "gunicorn>=20.1.0",
 //     "protobuf>=3.11.3",
 //     "pytest>=6.0.1",
@@ -225,13 +225,13 @@
           "artifacts": [
             {
               "algorithm": "sha256",
-              "hash": "7e0a1393d18c16b503663752a8b6790880c5084412618990ce8a81cc908b4962",
-              "url": "https://files.pythonhosted.org/packages/89/69/c556b5b3e7a6701724485fc07c8349791e585b784dc70c9c0683d98ef0db/Django-3.2.3-py3-none-any.whl"
+              "hash": "b896ca61edc079eb6bbaa15cf6071eb69d6aac08cce5211583cfb41515644fdf",
+              "url": "https://files.pythonhosted.org/packages/c3/68/b63abc009adee25c1bd266b3740e173eab656608cf21641594a37e02cf57/Django-3.2.13-py3-none-any.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "13ac78dbfd189532cad8f383a27e58e18b3d33f80009ceb476d7fcbfc5dcebd8",
-              "url": "https://files.pythonhosted.org/packages/f2/a5/905c45599a599d8b66f2a572a384ffd29bf5482233ec701fd53d5f52a513/Django-3.2.3.tar.gz"
+              "hash": "6d93497a0a9bf6ba0e0b1a29cccdc40efbfc76297255b1309b3a884a688ec4b6",
+              "url": "https://files.pythonhosted.org/packages/92/69/52760ffd860e995b390a4e897d38ae0669ce633c0fbb76b15f71cb0bb930/Django-3.2.13.tar.gz"
             }
           ],
           "project_name": "django",
@@ -243,7 +243,7 @@
             "sqlparse>=0.2.2"
           ],
           "requires_python": ">=3.6",
-          "version": "3.2.3"
+          "version": "3.2.13"
         },
         {
           "artifacts": [
@@ -1434,7 +1434,7 @@
   "requirements": [
     "ansicolors>=1.0.2",
     "django-stubs>=1.10.0",
-    "django==3.2.3",
+    "django<4,>=3.2.13",
     "gunicorn>=20.1.0",
     "protobuf>=3.11.3",
     "pytest>=6.0.1",

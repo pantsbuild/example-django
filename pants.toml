@@ -29,6 +29,9 @@ interpreter_constraints = [">=3.7"]
 # Use a lockfile. See https://www.pantsbuild.org/docs/python-third-party-dependencies.
 enable_resolves = true
 resolves = { python-default = "lockfiles/python-default.txt" }
+# Enable using the PEX lockfile format, which provides support for custom indexes, and
+# improves performance for large repositories.
+lockfile_generator = "pex"
 
 [python-bootstrap]
 # We search for interpreters on both on the $PATH and in the `$(pyenv root)/versions` folder.

@@ -28,7 +28,7 @@ root_patterns = ["/"]
 interpreter_constraints = [">=3.9,<3.10"]
 # Use a lockfile. See https://www.pantsbuild.org/docs/python-third-party-dependencies.
 enable_resolves = true
-resolves = { python-default = "lockfiles/python-default.txt" }
+resolves = { python-default = "lockfiles/python-default.lock" }
 
 [python-bootstrap]
 # We search for interpreters on both on the $PATH and in the `$(pyenv root)/versions` folder.
@@ -45,7 +45,7 @@ search_path = ["<PATH>", "<PYENV>"]
 string_imports = true
 
 [pytest]
-lockfile = "lockfiles/pytest.txt"
+lockfile = "lockfiles/pytest.lock"
 version = "pytest>=6.2.4,<6.3"
 extra_requirements.add = [
   "pytest-django>=4,<5",
@@ -54,9 +54,9 @@ extra_requirements.add = [
 execution_slot_var = "PANTS_EXECUTION_SLOT"
 
 [mypy]
-lockfile = "lockfiles/mypy.txt"
+lockfile = "lockfiles/mypy.lock"
 version = "mypy==0.942"
-interpreter_constraints = [">=3.7"]
+interpreter_constraints = [">=3.9,<3.10"]
 extra_requirements.add = [
   # This is a mypy plugin, as well as a type stubs repository. So it must be mentioned
   # here as well as in requirements.txt.

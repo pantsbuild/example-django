@@ -3,6 +3,7 @@
 
 ansicolors>=1.0.2
 django>=3.2.13,<4
+django-debug-toolbar>=3.8.0,<4
 django-stubs>=1.10.0
 gunicorn>=20.1.0
 setuptools>=42.0.0

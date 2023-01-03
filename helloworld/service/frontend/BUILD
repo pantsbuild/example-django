@@ -4,6 +4,7 @@
 python_sources(
     name="lib",
     dependencies=[
+        "//:requirements#django-debug-toolbar",
         "helloworld/ui",
     ],
 )

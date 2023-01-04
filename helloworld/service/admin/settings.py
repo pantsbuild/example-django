@@ -29,4 +29,4 @@ set_up_database("greetings")  # noqa: F405
 # The admin UI expects to auth against the "default" db, so we alias it here.
 DATABASES["default"] = DATABASES["users"]  # noqa: F405
 
-STATIC_URL = "/static/"
+STATIC_URL = "static/"

@@ -74,9 +74,9 @@ The services are composed of four Django apps:
 ## To view the frontend:
 
 In three terminals run:
-- `PANTS_CONCURRENT=True ./pants run helloworld/service/frontend/manage.py -- runserver`
-- `PANTS_CONCURRENT=True ./pants run helloworld/service/user/manage.py -- runserver`
-- `PANTS_CONCURRENT=True ./pants run helloworld/service/welcome/manage.py -- runserver`
+- `./pants --concurrent run helloworld/service/frontend/manage.py -- runserver`
+- `./pants --concurrent run helloworld/service/user/manage.py -- runserver`
+- `./pants --concurrent run helloworld/service/welcome/manage.py -- runserver`
 
 And visit this URL in a browser: [http://127.0.0.1:8000/?person=sherlock&lang=es]() .
 You will have to first set up a database and run migrations, of course.

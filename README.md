@@ -14,6 +14,8 @@ See [pantsbuild.org](https://www.pantsbuild.org/) for much more detailed documen
 
 See [here](https://github.com/pantsbuild/example-python) for an example of basic Python support in Pants.
 
+See [here](https://www.pantsbuild.org/docs/installation) for how to install the `pants` binary.
+
 ## Architecture
 
 We utilize a flexible "database-first" architecture: Since migrating production databases
@@ -74,9 +76,9 @@ The services are composed of four Django apps:
 ## To view the frontend:
 
 In three terminals run:
-- `./pants --concurrent run helloworld/service/frontend/manage.py -- runserver`
-- `./pants --concurrent run helloworld/service/user/manage.py -- runserver`
-- `./pants --concurrent run helloworld/service/welcome/manage.py -- runserver`
+- `pants --concurrent run helloworld/service/frontend/manage.py -- runserver`
+- `pants --concurrent run helloworld/service/user/manage.py -- runserver`
+- `pants --concurrent run helloworld/service/welcome/manage.py -- runserver`
 
 And visit this URL in a browser: [http://127.0.0.1:8000/?person=sherlock&lang=es]() .
 You will have to first set up a database and run migrations, of course.
@@ -86,25 +88,25 @@ You will have to first set up a database and run migrations, of course.
 To run all tests:
 
 ```
-./pants test ::
+pants test ::
 ```
 
 To run formatters and linters:
 
 ```
-./pants fmt lint ::
+pants fmt lint ::
 ```
 
 To run typechecking:
 
 ```
-./pants check ::
+pants check ::
 ```
 
 To build deployable gunicorn .pex files for all services:
 
 ```
-./pants package ::
+pants package ::
 ```
 
 ## manage.py
@@ -112,7 +114,7 @@ To build deployable gunicorn .pex files for all services:
 To run management commands for a service, use that service's `manage.py`, e.g.,
 
 ```
-./pants run helloworld/service/admin/manage.py -- runserver
+pants run helloworld/service/admin/manage.py -- runserver
 ```
 
  Note that for `runserver`, each dev server will run on its own port, see DEV_PORTS in
@@ -127,6 +129,6 @@ To run migrations, it's best to use the admin service's manage.py, as it has acc
 all apps:
 
 ```
-./pants run helloworld/service/admin/manage.py -- migrate --database=users
-./pants run helloworld/service/admin/manage.py -- migrate --database=greetings
+pants run helloworld/service/admin/manage.py -- migrate --database=users
+pants run helloworld/service/admin/manage.py -- migrate --database=greetings
 ```

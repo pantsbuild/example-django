@@ -7,6 +7,9 @@ python_sources(
         "helloworld/greet",
         "helloworld/translate",
     ],
+    overrides={
+        "manage.py": {"dependencies": ["helloworld/service/welcome/settings.py:lib"]}
+    },
 )
 
 pex_binary(

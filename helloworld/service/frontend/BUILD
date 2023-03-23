@@ -6,6 +6,9 @@ python_sources(
     dependencies=[
         "helloworld/ui",
     ],
+    overrides={
+        "manage.py": {"dependencies": ["helloworld/service/frontend/settings.py:lib"]}
+    },
 )
 
 pex_binary(

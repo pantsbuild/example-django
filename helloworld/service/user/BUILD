@@ -6,6 +6,9 @@ python_sources(
     dependencies=[
         "helloworld/person",
     ],
+    overrides={
+        "manage.py": {"dependencies": ["helloworld/service/user/settings.py:lib"]}
+    },
 )
 
 pex_binary(

@@ -120,8 +120,8 @@ pants run helloworld/service/admin/manage.py -- runserver
  Note that for `runserver`, each dev server will run on its own port, see DEV_PORTS in
 [`helloworld/util/discovery.py`](helloworld/util/discovery.py).
 
-Also, with `runserver` we turn off Django's autoreloader, since we rely on Pants's own
-file-watching instead, by setting `restartable=True` on the `pex_binary` targets for `manage.py`.
+Also, with `runserver` we [turn off](helloworld/util/service.py#L40) Django's autoreloader.
+Instead, we rely on Pants's own file-watching, by setting `restartable=True` on `manage.py`.
 Pants will correctly restart servers in situations where Django cannot, such as changes to 
 BUILD files, to `.proto` files, or to 3rdparty dependencies.
 

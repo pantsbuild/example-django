@@ -8,7 +8,11 @@ python_sources(
         "helloworld/translate",
     ],
     overrides={
-        "manage.py": {"dependencies": ["helloworld/service/welcome/settings.py:lib"]}
+        "manage.py": {
+            "dependencies": ["helloworld/service/welcome/settings.py:lib"],
+            "restartable": True,
+        },
+        "gunicorn.py": {"restartable": True},
     },
 )
 
@@ -18,7 +22,6 @@ pex_binary(
     dependencies=[
         ":lib",
     ],
-    restartable=True,
 )
 
 pex_binary(
@@ -27,5 +30,4 @@ pex_binary(
     dependencies=[
         ":lib",
     ],
-    restartable=True,
 )

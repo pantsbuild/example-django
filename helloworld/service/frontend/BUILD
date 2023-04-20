@@ -7,7 +7,11 @@ python_sources(
         "helloworld/ui",
     ],
     overrides={
-        "manage.py": {"dependencies": ["helloworld/service/frontend/settings.py:lib"]}
+        "manage.py": {
+            "dependencies": ["helloworld/service/frontend/settings.py:lib"],
+            "restartable": True,
+        },
+        "gunicorn.py": {"restartable": True},
     },
 )
 
@@ -17,7 +21,6 @@ pex_binary(
     dependencies=[
         ":lib",
     ],
-    restartable=True,
 )
 
 pex_binary(
@@ -26,5 +29,4 @@ pex_binary(
     dependencies=[
         ":lib",
     ],
-    restartable=True,
 )

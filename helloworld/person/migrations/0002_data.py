@@ -21,7 +21,6 @@ def create_people_to_greet(apps, schema_editor):
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("person", "0001_initial"),
     ]

@@ -29,7 +29,6 @@ def create_greetings(apps, schema_editor):
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("greet", "0001_initial"),
     ]

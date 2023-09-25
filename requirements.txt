@@ -10,5 +10,6 @@ setuptools>=42.0.0
 translate>=3.2.1
 protobuf>=3.11.3
 pytest>=6.0.1
+pytest-django>=4,<5
 requests>=2.25.1
 types-requests>=2.25.1

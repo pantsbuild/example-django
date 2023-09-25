@@ -50,9 +50,10 @@ jobs:
       run: |
         pants --version
     - name: Check BUILD files
-      run: pants tailor --check update-build-files --check
+      run: |
+        pants tailor --check update-build-files --check ::
     - name: Lint and typecheck
-      run: | 
+      run: |
         pants lint check ::
     - name: Test
       run: |

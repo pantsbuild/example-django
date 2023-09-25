@@ -2,7 +2,7 @@
 # Licensed under the Apache License, Version 2.0 (see LICENSE).
 
 [GLOBAL]
-pants_version = "2.16.0"
+pants_version = "2.17.0"
 
 backend_packages.add = [
   'pants.backend.python',
@@ -43,6 +43,7 @@ search_path = ["<PATH>", "<PYENV>"]
 # Infer dependencies from strings that look like module/class names, such as are often
 # found in settings.py, where dependencies are enumerated as strings and not directly imported.
 string_imports = true
+use_rust_parser = true
 
 [pytest]
 install_from_resolve = "python-default"

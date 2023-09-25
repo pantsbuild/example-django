@@ -11,9 +11,10 @@
 //   "generated_with_requirements": [
 //     "ansicolors>=1.0.2",
 //     "django-debug-toolbar<4,>=3.8.0",
-//     "django-stubs>=1.10.0",
+//     "django-stubs==1.10.1",
 //     "django<4,>=3.2.13",
 //     "gunicorn>=20.1.0",
+//     "mypy==0.942",
 //     "protobuf>=3.11.3",
 //     "pytest-django<5,>=4",
 //     "pytest>=6.0.1",
@@ -250,28 +251,27 @@
           "artifacts": [
             {
               "algorithm": "sha256",
-              "hash": "834b60fd81510cce6b56c1c6c28bec3c504a418bc90ff7d0063fabe8ab9a7868",
-              "url": "https://files.pythonhosted.org/packages/ec/80/e8a30784849a3fe491e3d3eec20ed25c5b819baff2ee52895d82c6a660d8/django_stubs-4.2.4-py3-none-any.whl"
+              "hash": "dfffa933e3c7f5cae92c860fbd6cf4ae58c4f78eed93843612f863207c9e0e1a",
+              "url": "https://files.pythonhosted.org/packages/9b/70/fa9c13b2c9305f5728ee7200e4666a0f66472171bb4656919fc7ff3be35e/django_stubs-1.10.1-py3-none-any.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "7d4a132c381519815e865c27a89eca41bcbd06056832507224816a43d75c601c",
-              "url": "https://files.pythonhosted.org/packages/0b/fa/ba572e8676aca9b0cea3af3d1d69f5e3874f4a1db9bdc33f338fedd23221/django-stubs-4.2.4.tar.gz"
+              "hash": "2ec21fc14dba392156e0ec8438e1863c86ddb295f1c8d88eecd7e0e04977c843",
+              "url": "https://files.pythonhosted.org/packages/20/b7/07950c67ab79042c52fc1a2b32c5c6995385bd1a5333206b88a6e8380476/django-stubs-1.10.1.tar.gz"
             }
           ],
           "project_name": "django-stubs",
           "requires_dists": [
             "django",
-            "django-stubs-ext>=4.2.2",
-            "mypy==1.5.*; extra == \"compatible-mypy\"",
-            "mypy>=1.0.0",
-            "tomli; python_version < \"3.11\"",
+            "django-stubs-ext>=0.4.0",
+            "mypy<0.950,>=0.930",
+            "tomli",
             "types-PyYAML",
             "types-pytz",
             "typing-extensions"
           ],
-          "requires_python": ">=3.8",
-          "version": "4.2.4"
+          "requires_python": ">=3.7",
+          "version": "1.10.1"
         },
         {
           "artifacts": [
@@ -480,46 +480,47 @@
           "artifacts": [
             {
               "algorithm": "sha256",
-              "hash": "f757063a83970d67c444f6e01d9550a7402322af3557ce7630d3c957386fa8f5",
-              "url": "https://files.pythonhosted.org/packages/d7/e0/4f80f9d3a7dffb97d7ba3b2eb6b06011d311bfd645727e51b003db482d48/mypy-1.5.1-py3-none-any.whl"
+              "hash": "a1b383fe99678d7402754fe90448d4037f9512ce70c21f8aee3b8bf48ffc51db",
+              "url": "https://files.pythonhosted.org/packages/dd/c1/072c3187d19d1e5445a0230b526916e37497eefe6b060491845603fa6f95/mypy-0.942-py3-none-any.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "8f772942d372c8cbac575be99f9cc9d9fb3bd95c8bc2de6c01411e2c84ebca8a",
-              "url": "https://files.pythonhosted.org/packages/08/dc/3d8800a45ff8b7a38125547acaf6060fda9924e855ece67ff721febf5437/mypy-1.5.1-cp39-cp39-macosx_10_9_x86_64.whl"
+              "hash": "6ce34a118d1a898f47def970a2042b8af6bdcc01546454726c7dd2171aa6dfca",
+              "url": "https://files.pythonhosted.org/packages/52/67/f3bfbb3b73c8b154a7fe2c4e36c24751329a67151a014dc7b12a6e45e386/mypy-0.942-cp39-cp39-macosx_10_9_universal2.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "b031b9601f1060bf1281feab89697324726ba0c0bae9d7cd7ab4b690940f0b92",
-              "url": "https://files.pythonhosted.org/packages/33/f9/c84b68e4a754f5ce200dcf0786aa489164fa9d9dee84e375bd7d99caf637/mypy-1.5.1.tar.gz"
+              "hash": "10daab80bc40f84e3f087d896cdb53dc811a9f04eae4b3f95779c26edee89d16",
+              "url": "https://files.pythonhosted.org/packages/67/13/e99a8d4f804f3db73073512f04cce0fad7d0c75cc69245f99eab9ebf67d9/mypy-0.942-cp39-cp39-macosx_10_9_x86_64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "330857f9507c24de5c5724235e66858f8364a0693894342485e543f5b07c8693",
-              "url": "https://files.pythonhosted.org/packages/42/7a/92845ec0a26900f5de0eeedb66ae4d5ae66c557d080c22fac4f97c4f2574/mypy-1.5.1-cp39-cp39-musllinux_1_1_x86_64.whl"
+              "hash": "3841b5433ff936bff2f4dc8d54cf2cdbfea5d8e88cedfac45c161368e5770ba6",
+              "url": "https://files.pythonhosted.org/packages/7f/90/27f32c7c4cac281b7e0a2bdf225f0e3020dc091efcba4bc2efc32d1d5592/mypy-0.942-cp39-cp39-macosx_11_0_arm64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "361da43c4f5a96173220eb53340ace68cda81845cd88218f8862dfb0adc8cddb",
-              "url": "https://files.pythonhosted.org/packages/63/20/c55a48793a30b0786755c108d81406ce43604bc600cdcd4990cb62b37cb8/mypy-1.5.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+              "hash": "6f7106cbf9cc2f403693bf50ed7c9fa5bb3dfa9007b240db3c910929abe2a322",
+              "url": "https://files.pythonhosted.org/packages/84/c7/9555abe67e9d1b5300042797f5c2829de40c831e5d99a8f467e741a4816a/mypy-0.942-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "5d627124700b92b6bbaa99f27cbe615c8ea7b3402960f6372ea7d65faf376c14",
-              "url": "https://files.pythonhosted.org/packages/c1/6d/755ef7671bc01e2990dbd0054bd1855786b749764e35724be22d2d64c11d/mypy-1.5.1-cp39-cp39-macosx_11_0_arm64.whl"
+              "hash": "17e44649fec92e9f82102b48a3bf7b4a5510ad0cd22fa21a104826b5db4903e2",
+              "url": "https://files.pythonhosted.org/packages/e3/7b/3fa271e904b0e8689fb0f0083a43a8bf84b9b47b8f3f5a36e0ee2c064eb4/mypy-0.942.tar.gz"
             }
           ],
           "project_name": "mypy",
           "requires_dists": [
             "lxml; extra == \"reports\"",
-            "mypy-extensions>=1.0.0",
-            "pip; extra == \"install-types\"",
+            "mypy-extensions>=0.4.3",
             "psutil>=4.0; extra == \"dmypy\"",
-            "tomli>=1.1.0; python_version < \"3.11\"",
-            "typing-extensions>=4.1.0"
+            "tomli>=1.1.0",
+            "typed-ast<2,>=1.4.0; extra == \"python2\"",
+            "typed-ast<2,>=1.4.0; python_version < \"3.8\"",
+            "typing-extensions>=3.10"
           ],
-          "requires_python": ">=3.8",
-          "version": "1.5.1"
+          "requires_python": ">=3.6",
+          "version": "0.942"
         },
         {
           "artifacts": [
@@ -975,9 +976,10 @@
   "requirements": [
     "ansicolors>=1.0.2",
     "django-debug-toolbar<4,>=3.8.0",
-    "django-stubs>=1.10.0",
+    "django-stubs==1.10.1",
     "django<4,>=3.2.13",
     "gunicorn>=20.1.0",
+    "mypy==0.942",
     "protobuf>=3.11.3",
     "pytest-django<5,>=4",
     "pytest>=6.0.1",

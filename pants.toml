@@ -2,7 +2,7 @@
 # Licensed under the Apache License, Version 2.0 (see LICENSE).
 
 [GLOBAL]
-pants_version = "2.16.0rc0"
+pants_version = "2.17.0"
 
 backend_packages.add = [
   'pants.backend.python',
@@ -43,22 +43,15 @@ search_path = ["<PATH>", "<PYENV>"]
 # Infer dependencies from strings that look like module/class names, such as are often
 # found in settings.py, where dependencies are enumerated as strings and not directly imported.
 string_imports = true
+use_rust_parser = true
 
 [pytest]
-lockfile = "lockfiles/pytest.lock"
-version = "pytest>=6.2.4,<6.3"
-extra_requirements.add = [
-  "pytest-django>=4,<5",
-]
+install_from_resolve = "python-default"
+requirements = ["pytest-django"]
 
 execution_slot_var = "PANTS_EXECUTION_SLOT"
 
 [mypy]
-lockfile = "lockfiles/mypy.lock"
-version = "mypy==0.942"
+install_from_resolve = "python-default"
+requirements = ["django-stubs"]
 interpreter_constraints = [">=3.9,<3.10"]
-extra_requirements.add = [
-  # This is a mypy plugin, as well as a type stubs repository. So it must be mentioned
-  # here as well as in requirements.txt.
-  "django-stubs==1.10.1"
-]

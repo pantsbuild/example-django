@@ -25,7 +25,7 @@ root_patterns = ["/"]
 # The default interpreter compatibility for code in this repo. Individual targets can override
 #  this with the `compatibility` field. See
 #  https://www.pantsbuild.org/docs/python-interpreter-compatibility.
-interpreter_constraints = [">=3.9,<3.10"]
+interpreter_constraints = [">=3.12,<3.13"]
 # Use a lockfile. See https://www.pantsbuild.org/docs/python-third-party-dependencies.
 enable_resolves = true
 resolves = { python-default = "lockfiles/python-default.lock" }
@@ -53,5 +53,5 @@ execution_slot_var = "PANTS_EXECUTION_SLOT"
 
 [mypy]
 install_from_resolve = "python-default"
-requirements = ["django-stubs"]
-interpreter_constraints = [">=3.9,<3.10"]
+requirements = ["mypy", "django-stubs"]
+interpreter_constraints = [">=3.12,<3.13"]
